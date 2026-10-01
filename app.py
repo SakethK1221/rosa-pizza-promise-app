@@ -4,7 +4,7 @@ import streamlit as st
 from starter import COSTS, TIME_BLOCKS, ZONES, delivery_times
 
 
-#Calulate total cost per late order
+#Calculate total cost per late order
 def cost_per_late_order(costs):
     refund = costs["refund"]
     churn = costs["churn_orders"]
@@ -44,20 +44,20 @@ zone = st.selectbox("Zone", ZONES)
 time_block = st.selectbox("Time block", TIME_BLOCKS)
 
 st.subheader("Promise range")
-minimum_promise = st.number_input("Minimum promise (minutes)", min_value=0, value=20, step=1)
-maximum_promise = st.number_input("Maximum promise (minutes)", min_value=0, value=80, step=1)
+minimum_promise = st.number_input("Minimum promise (minutes)", min_value=1, value=20, step=1)
+maximum_promise = st.number_input("Maximum promise (minutes)", min_value=1, value=80, step=1)
 promise_step = st.number_input("Promise step (minutes)", min_value=1, value=5, step=1)
 
 st.subheader("Order economics")
-margin = st.number_input("Profit margin per order $", min_value=0.0, value=float(COSTS["margin"]), step=0.01)
+margin = st.number_input("Profit margin per order ($)", min_value=0.0, value=float(COSTS["margin"]), step=0.01)
 churn_orders = st.number_input(
-    "Churn per late order $",
+    "Lost orders per late order (churn)",
     min_value=0.0,
     value=float(COSTS["churn_orders"]),
     step=0.01,
 )
 refund = st.number_input(
-    "Refund per late order $",
+    "Refund per late order ($)",
     min_value=0.0,
     value=float(COSTS["refund"]),
     step=0.01,
