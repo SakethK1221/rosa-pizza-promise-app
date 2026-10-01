@@ -17,11 +17,9 @@ where the cost per late order = refund + (lost future orders × profit margin). 
 3. Adjust the profit margin, lost orders per late order, and refund if you want.
 4. Click the button to see the recommended promise and its net profit.
 
-## Run locally
+## Run the app from
+https://rosa-pizza-promise-app-vpyfmjaaodcswl8r4x4m3g.streamlit.app/
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
 ```
 
 ## Notes
